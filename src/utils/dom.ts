@@ -20,7 +20,9 @@ export function onClick<T extends HTMLElement>(
     handler: (element: T, event: MouseEvent) => void,
 ): void {
     const element = getElement<T>(id)
+
     if (!element) return
+
     element.addEventListener('click', (event) => handler(element, event))
 }
 
@@ -39,6 +41,7 @@ export function setAttribute<T extends HTMLElement>(
     value: string,
 ): void {
     const element = getElement<T>(id)
+
     if (element) element.setAttribute(name, value)
 }
 
@@ -52,7 +55,9 @@ export function onEvent<T extends HTMLElement>(
     handler: (element: T, event: Event) => void,
 ): void {
     const element = getElement<T>(id)
+
     if (!element) return
+
     element.addEventListener(event, (event) => handler(element, event))
 }
 
@@ -61,7 +66,9 @@ export function toggleClass<T extends HTMLElement>(
     className: string,
 ): void {
     const element = getElement<T>(id)
+
     if (element) element.classList.toggle(className)
+
     console.debug('[DOM] Toggled class:', className)
 }
 
@@ -70,5 +77,6 @@ export function toggleElementClass<T extends HTMLElement>(
     className: string,
 ): void {
     element?.classList.toggle(className)
+
     console.debug('[DOM] Toggled class:', className)
 }
