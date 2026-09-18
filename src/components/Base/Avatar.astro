@@ -1,5 +1,6 @@
 ---
 import { Metadata } from '@/consts'
+import { Image } from 'astro:assets'
 
 interface Props {
     size: number
@@ -8,11 +9,12 @@ interface Props {
 const { size } = Astro.props
 ---
 
-<img
+<Image
     src="/assets/profile.png"
     alt={Metadata.title}
+    class="rounded-full shrink-0 shadow select-none"
     width={size}
     height={size}
     draggable={false}
-    class="rounded-full shrink-0 shadow select-none"
+    loading="eager"
 />

@@ -12,5 +12,5 @@
 }
 
 body {
-    @apply mx-auto max-w-3xl text-white dark:bg-zinc-950;
+    @apply mx-auto max-w-2xl text-white dark:bg-zinc-950;
 }

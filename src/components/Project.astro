@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+    icon: string
+    name: string
+    description: string
+    start: number
+    end?: number
+}
+
+const { icon, name, description, start, end } = Astro.props
+---
+
+<div class="flex flex-col gap-2">
+    <div class="flex items-start gap-4">
+        <Image
+            src={icon}
+            alt={name}
+            class="select-none mt-2 invert-30 dark:invert-75"
+            width={36}
+            height={36}
+            draggable={false}
+        />
+
+        <div>
+            <h2 class="font-medium text-xl text-zinc-700 dark:text-zinc-100">
+                {name}
+            </h2>
+
+            <span class="text-sm font-medium text-zinc-500 dark:text-zinc-300">
+                Software Engineer · {start} - {end ? end : 'Present'}
+            </span>
+
+            <p class="mt-2 text-lg text-zinc-500 dark:text-zinc-300">
+                {description}
+            </p>
+        </div>
+    </div>
+
+    <ul class="ml-14 list-disc list-inside space-y-2">
+        <li class="text-zinc-500 dark:text-zinc-200">Task one!</li>
+
+        <li class="text-zinc-500 dark:text-zinc-200">Task two!</li>
+
+        <li class="text-zinc-500 dark:text-zinc-200">Task three!</li>
+    </ul>
+</div>
+
+<!--
+Κάτι δεν μου αρέσει- δεν ξέρω και τι κιόλας
+<Box
+    parentClass="w-fit items-center gap-2 py-4! px-4! dark:text-zinc-200 text-zinc-600 font-medium"
+    row
+    hover
+>
+    Check out <Icon name="ph:arrow-square-out-duotone" />
+</Box>
+-->

@@ -2,17 +2,20 @@
 interface Props {
     parentClass?: string
     row?: boolean
+    hover?: boolean
 }
 
-const { parentClass, row = false } = Astro.props
+const { parentClass, row = false, hover = false } = Astro.props
 ---
 
 <div
     class:list={[
-        'flex border border-zinc-300 bg-zinc-100 px-8 py-6 dark:border-zinc-800 dark:bg-zinc-900',
+        'flex border border-zinc-300 rounded-xl bg-zinc-100 px-8 py-6 dark:border-zinc-800 dark:bg-zinc-900',
         parentClass,
         {
             'flex-col': !row,
+            'transition-colors hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:dark:border-zinc-700':
+                hover,
         },
     ]}
 >

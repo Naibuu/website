@@ -31,11 +31,11 @@ const Socials: Social[] = [
 ]
 ---
 
-<div class="w-full flex justify-between items-center">
+<div class="w-full flex justify-center max-sm:gap-4 sm:justify-between items-center flex-wrap">
     {Socials.map((item) => (
         <a
             href={item.href}
-            class="text-zinc-800 dark:text-zinc-100 flex text-lg font-medium items-center gap-1 underline underline-offset-2"
+            class="text-zinc-800 dark:text-zinc-100 flex sm:text-lg font-medium items-center gap-1 underline underline-offset-2"
         >
             <Icon name={item.icon} size={20} />
             {item.name}
