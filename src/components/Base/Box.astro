@@ -1,16 +1,16 @@
 ---
 interface Props {
-    className?: string
+    parentClass?: string
     row?: boolean
 }
 
-const { className, row = false } = Astro.props
+const { parentClass, row = false } = Astro.props
 ---
 
 <div
     class:list={[
-        'flex rounded-2xl border border-zinc-300 bg-zinc-100 px-8 py-6 text-neutral-800 dark:border-zinc-800 dark:bg-zinc-900 dark:text-neutral-300',
-        className,
+        'flex border border-zinc-300 bg-zinc-100 px-8 py-6 dark:border-zinc-800 dark:bg-zinc-900',
+        parentClass,
         {
             'flex-col': !row,
         },

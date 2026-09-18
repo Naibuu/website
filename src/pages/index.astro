@@ -1,51 +1,22 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { Icon } from 'astro-icon/components'
-import { skills, projects } from '@/consts'
-
-import Box from '@/components/Base/Box.astro'
-import Tag from '@/components/Base/Tag.astro'
-
-import SkillCard from '@/components/Cards/SkillCard.astro'
-import ProjectCard from '@/components/Cards/ProjectCard.astro'
+import Avatar from '@/components/Base/Avatar.astro'
+import Email from '@/components/Email.astro'
+import Socials from '@/components/Socials.astro'
 ---
 
 <Layout>
-    <!-- Me -->
-    <span
-        class="flex items-center gap-1 text-sm font-medium text-neutral-600 dark:text-neutral-400"
-    >
-        <Icon name="ph:user" size={20} /> Me
-    </span>
+    <div class="flex flex-col items-start gap-4">
+        <Avatar size={96} />
 
-    <Box className="text-sm leading-6">
-        Heya! I'm Alex, also known as Naibuu. I'm a software developer and
-        graphic designer, with experience in both web and software development.
-        I also bring strong expertise in graphic design with a refined eye for
-        detail and aesthetics.
-    </Box>
+        <h2 class="text-xl font-medium text-zinc-600 dark:text-zinc-300">
+            Heya! I'm <span class="text-zinc-700 dark:text-zinc-100">Alex</span>
+            , though you might know me online as Naibuu. I'm a fullstack
+            engineer with experience in both web and software development.
+        </h2>
 
-    <!-- Skills -->
-    <span
-        class="flex items-center gap-1 text-sm font-medium text-neutral-600 dark:text-neutral-400"
-    >
-        <Icon name="ph:star" size={20} /> Experience <Tag
-            className="bg-zinc-300">6 Years</Tag
-        >
-    </span>
-
-    <Box className="gap-3">
-        {skills.map((skill) => <SkillCard {...skill} />)}
-    </Box>
-
-    <!-- Projects -->
-    <span
-        class="flex items-center gap-1 text-sm font-medium text-neutral-600 dark:text-neutral-400"
-    >
-        <Icon name="ph:read-cv-logo" size={20} /> Work
-    </span>
-
-    <div class="flex flex-col gap-3">
-        {projects.map((project) => <ProjectCard {...project} />)}
+        <Socials />
     </div>
+
+    <Email />
 </Layout>

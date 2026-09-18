@@ -1,0 +1,44 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Social {
+    icon: string
+    name: string
+    href: string
+}
+
+const Socials: Social[] = [
+    {
+        icon: 'ph:discord-logo-duotone',
+        name: 'naibuudev',
+        href: 'https://s.naibuu.dev/discord',
+    },
+    {
+        icon: 'ph:x-logo-duotone',
+        name: '@naibuudev',
+        href: 'https://s.naibuu.dev/twitter',
+    },
+    {
+        icon: 'ph:github-logo-duotone',
+        name: 'naibuu',
+        href: 'https://s.naibuu.dev/github',
+    },
+    {
+        icon: 'ph:mailbox-duotone',
+        name: 'me@naibuu.dev',
+        href: 'https://s.naibuu.dev/github',
+    },
+]
+---
+
+<div class="w-full flex justify-between items-center">
+    {Socials.map((item) => (
+        <a
+            href={item.href}
+            class="text-zinc-800 dark:text-zinc-100 flex text-lg font-medium items-center gap-1 underline underline-offset-2"
+        >
+            <Icon name={item.icon} size={20} />
+            {item.name}
+        </a>
+    ))}
+</div>

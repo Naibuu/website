@@ -7,6 +7,10 @@
     --font-sans: 'Inter', sans-serif;
 }
 
+*::selection {
+    @apply bg-sky-800/30;
+}
+
 body {
-    @apply mx-auto max-w-6xl bg-zinc-200 text-white dark:bg-zinc-950;
+    @apply mx-auto max-w-3xl text-white dark:bg-zinc-950;
 }

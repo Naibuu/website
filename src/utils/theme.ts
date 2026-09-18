@@ -1,4 +1,4 @@
-import type { Theme } from '@/types'
+export type Theme = 'dark' | 'light'
 
 export function getTheme(): Theme {
     const stored = localStorage.getItem('theme') as Theme | null
