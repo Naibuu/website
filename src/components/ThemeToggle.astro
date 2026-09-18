@@ -11,8 +11,7 @@ import { Icon } from 'astro-icon/components'
 </button>
 
 <script>
-    import type { Theme } from '@/types'
-    import { getTheme, setTheme } from '@/utils/theme'
+    import { type Theme, getTheme, setTheme } from '@/utils/theme'
     import { onClick, setRootAttribute } from '@/utils/dom'
 
     function toggleTheme(): void {

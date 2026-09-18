@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import { t } from '@/utils/i18n'
 
 interface Props {
     icon: string
@@ -29,7 +30,7 @@ const { icon, name, description, start, end } = Astro.props
             </h2>
 
             <span class="text-sm font-medium text-zinc-500 dark:text-zinc-300">
-                Software Engineer · {start} - {end ? end : 'Present'}
+                Software Engineer · {start} - {end ? end : t('common.present')}
             </span>
 
             <p class="mt-2 text-lg text-zinc-500 dark:text-zinc-300">
